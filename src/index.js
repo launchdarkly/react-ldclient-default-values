@@ -9,10 +9,10 @@ import './index.css';
   const root = createRoot(rootElement);
   
   const LDProvider = await asyncWithLDProvider({
-    //create .env.local file containing REACT_APP_LD_CLIENT_SIDE_ID=<your-client-side-id>
-    
-    //clientSideID: process.env.REACT_APP_LD_CLIENT_SIDE_ID, //working, comment out for local development
-    clientSideID: process.env.REACT_APP_BROKEN_LD_CLIENT_SIDE_ID, //non-working, comment out for connected development
+    //comment out line 14 to force usage of default values
+    //comment out line 15 for connected development
+    //clientSideID: process.env.REACT_APP_LD_CLIENT_SIDE_ID, //connected development
+    clientSideID: process.env.REACT_APP_BROKEN_LD_CLIENT_SIDE_ID, //local development
     reactOptions: {
       useCamelCaseFlagKeys: false
     },

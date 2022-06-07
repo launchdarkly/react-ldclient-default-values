@@ -4,12 +4,10 @@ import logo from './logo.svg';
 
 function App() {
   const LDCLient = useLDClient();
-
-  const nonExistentFlag = LDCLient.variation('nonExistentFlag', 'myDefaultValue');
-  const knownFlag = LDCLient.variation('demoTheme', 'defaultValue');
-
-  console.log(nonExistentFlag);
-  console.log(knownFlag);
+   
+  //'defaultValue' only returned in disconnected/local development mode, otherwise actual value from LD returned
+  const flagWithDefaultValue = LDCLient.variation('demoTheme', 'defaultValue');
+  console.log(flagWithDefaultValue);
 
   return (
     <div className="App">
