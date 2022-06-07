@@ -1,7 +1,16 @@
-import logo from './logo.svg';
+import { useLDClient } from 'launchdarkly-react-client-sdk';
 import './App.css';
+import logo from './logo.svg';
 
 function App() {
+  const LDCLient = useLDClient();
+
+  const nonExistentFlag = LDCLient.variation('nonExistentFlag', 'myDefaultValue');
+  const knownFlag = LDCLient.variation('demoTheme', 'defaultValue');
+
+  console.log(nonExistentFlag);
+  console.log(knownFlag);
+
   return (
     <div className="App">
       <header className="App-header">
